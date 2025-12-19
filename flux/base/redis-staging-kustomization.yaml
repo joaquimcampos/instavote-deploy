@@ -3,19 +3,17 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: redis-staging
-  namespace: flux-system
+  namespace: instavote
 spec:
-  dependsOn:
-  - name: namespaces
   healthChecks:
   - kind: Deployment
     name: redis
     namespace: instavote
   interval: 1m
-  path: ./deploy/redis/staging
+  path: ./kustomize/redis/base/
   prune: true
   sourceRef:
     kind: GitRepository
-    name: instavote
+    name: instavote-deploy
   targetNamespace: instavote
   timeout: 2m0s

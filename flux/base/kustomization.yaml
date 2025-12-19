@@ -3,9 +3,9 @@ kind: Kustomization
 resources:
 - db-helmrelease.yaml
 - db-helmrepository.yaml
-- github-instavote-alert-provider.yaml
+- github-instavote.yaml
 - instavote-gitrepository.yaml
-- instavote-webhook-receiver.yaml
+- instavote-webhook.yaml
 - redis-staging-alert.yaml
 - redis-staging-kustomization.yaml
 - result-helmrelease.yaml
@@ -13,6 +13,10 @@ resources:
 - result-imagerepository.yaml
 - result-imageupdateautomation.yaml
 - secrets/dockerhub-creds.yaml
+- secrets/github-instavote-deploy.yaml
+- secrets/github-token.yaml
+- secrets/slack-url.yaml
+- secrets/webhook-token.yaml
 - slack-alert-provider.yaml
 - slack-notif-alert.yaml
 - vote-imagepolicy.yaml

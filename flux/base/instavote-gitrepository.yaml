@@ -2,15 +2,13 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  annotations:
-    reconcile.fluxcd.io/requestedAt: "2025-10-23T10:02:36.792433768Z"
-  name: instavote
-  namespace: flux-system
+  name: instavote-deploy
+  namespace: instavote
 spec:
   interval: 1m
   ref:
     branch: main
   timeout: 1m0s
   secretRef:
-    name: github-instavote
-  url: https://github.com/joaquimcampos/instavote.git
+    name: github-instavote-deploy
+  url: https://github.com/joaquimcampos/instavote-deploy.git
