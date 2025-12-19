@@ -5,7 +5,7 @@ metadata:
   name: github-instavote
   namespace: instavote
 spec:
-  address: https://github.com/joaquimcampos/instavote
+  address: https://github.com/joaquimcampos/instavote-deploy
   secretRef:
     name: github-token
   type: github
