@@ -3,9 +3,9 @@ kind: Kustomization
 resources:
 - db-helmrelease.yaml
 - db-helmrepository.yaml
-- github-instavote.yaml
+- github-instavote-alert-provider.yaml
 - instavote-gitrepository.yaml
-- instavote-webhook.yaml
+- instavote-webhook-receiver.yaml
 - redis-staging-alert.yaml
 - redis-staging-kustomization.yaml
 - result-helmrelease.yaml
