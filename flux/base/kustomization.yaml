@@ -12,11 +12,7 @@ resources:
 - result-imagepolicy.yaml
 - result-imagerepository.yaml
 - result-imageupdateautomation.yaml
-- secrets/dockerhub-creds.yaml
-- secrets/github-instavote-deploy.yaml
-- secrets/github-token.yaml
-- secrets/slack-url.yaml
-- secrets/webhook-token.yaml
+- secrets-kustomization.yaml
 - slack-alert-provider.yaml
 - slack-notif-alert.yaml
 - vote-imagepolicy.yaml
