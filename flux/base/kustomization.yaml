@@ -12,7 +12,6 @@ resources:
 - result-imagepolicy.yaml
 - result-imagerepository.yaml
 - result-imageupdateautomation.yaml
-- secrets-kustomization.yaml
 - slack-alert-provider.yaml
 - slack-notif-alert.yaml
 - vote-imagepolicy.yaml
