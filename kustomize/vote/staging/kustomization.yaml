@@ -7,7 +7,7 @@ patches:
   - path: svc.yaml
 replicas:
   - name: vote
-    count: 2
+    count: 1
 images:
   - name: schoolofdevops/vote
     newTag: main-16516a6a-1765997407 # {"$imagepolicy": "flux-system:vote:tag"}
