@@ -4,6 +4,7 @@ resources:
   - ../base
 patches:
   - path: deploy.yaml
+  - path: canary.yaml
 replicas:
   - name: vote
     count: 0
