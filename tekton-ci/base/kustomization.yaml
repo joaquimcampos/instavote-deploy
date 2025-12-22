@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
 - eventlistener.yaml
 - instavote-ci-pipeline.yaml
+- tasks/buildah.yaml
+- tasks/git-clone.yaml
 - triggerbinding-result.yaml
 - triggerbinding-vote.yaml
 - triggertemplate-result.yaml
