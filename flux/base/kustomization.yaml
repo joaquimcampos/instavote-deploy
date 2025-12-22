@@ -13,6 +13,7 @@ resources:
 - result-imageupdateautomation.yaml
 - slack-alert-provider.yaml
 - slack-notif-alert.yaml
+- tekton-ci-kustomization.yaml
 - vote-imagepolicy.yaml
 - vote-imagerepository.yaml
 - vote-imageupdateautomation.yaml
