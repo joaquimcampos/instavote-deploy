@@ -4,7 +4,7 @@ metadata:
   name: instavote-result-template
 spec:
   params:
-  - name: gitrevision
+  - name: revision
   resourcetemplates:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
@@ -31,7 +31,7 @@ spec:
       - name: repoUrl
         value: https://github.com/joaquimcampos/instavote.git
       - name: revision
-        value: $(params.gitrevision)
+        value: $(params.revision)
       - name: sparseCheckoutDirectories
         value: /result/
       - name: imageUrl

@@ -4,5 +4,5 @@ metadata:
   name: instavote-result-binding
 spec:
   params:
-  - name: gitrevision
+  - name: revision
     value: $(body.after)
