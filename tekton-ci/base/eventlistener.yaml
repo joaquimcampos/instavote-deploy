@@ -1,0 +1,52 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: instavote-listener
+spec:
+  serviceAccountName: tekton-triggers-sa
+  triggers:
+  - name: vote-trigger
+    interceptors:
+    - ref:
+        name: github
+      params:
+      - name: secretRef
+        value:
+          secretName: webhook-token
+          secretKey: token
+    - ref:
+        name: cel
+      params:
+      - name: filter
+        value: >
+          body.commits.exists(c,
+            c.added.exists(p, p.startsWith("vote/")) ||
+            c.modified.exists(p, p.startsWith("vote/"))
+          )
+    bindings:
+    - ref: instavote-vote-binding
+    template:
+      ref: instavote-vote-template
+
+  - name: result-trigger
+    interceptors:
+    - ref:
+        name: github
+      params:
+      - name: secretRef
+        value:
+          secretName: webhook-token
+          secretKey: token
+    - ref:
+        name: cel
+      params:
+      - name: filter
+        value: >
+          body.commits.exists(c,
+            c.added.exists(p, p.startsWith("result/")) ||
+            c.modified.exists(p, p.startsWith("result/"))
+          )
+    bindings:
+    - ref: instavote-result-binding
+    template:
+      ref: instavote-result-template

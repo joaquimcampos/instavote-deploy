@@ -1,0 +1,40 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: instavote-vote-template
+spec:
+  params:
+  - name: gitrevision
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      generateName: vote-ci-
+    spec:
+      pipelineRef:
+        name: instavote-ci
+      podTemplate:
+        securityContext:
+          fsGroup: 65532
+      workspaces:
+      - name: shared-data
+        volumeClaimTemplate:
+          spec:
+            accessModes: [ReadWriteOnce]
+            resources:
+              requests:
+                storage: 100Mi
+      - name: dockerconfig
+        secret:
+          secretName: dockerhub-creds
+      params:
+      - name: repoUrl
+        value: https://github.com/joaquimcampos/instavote.git
+      - name: revision
+        value: $(params.gitrevision)
+      - name: sparseCheckoutDirectories
+        value: /vote/
+      - name: imageUrl
+        value: jcampos15/vote
+      - name: pathToContext
+        value: vote
