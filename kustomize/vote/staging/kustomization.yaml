@@ -10,7 +10,7 @@ replicas:
     count: 0
 images:
   - name: schoolofdevops/vote
-    newTag: main-6562cd4e-1766425177 # {"$imagepolicy": "instavote:vote:tag"}
+    newTag: main-bf16bc2f-1766426219 # {"$imagepolicy": "instavote:vote:tag"}
     newName: jcampos15/vote
     # digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3  # it overrides tag
 namespace: instavote
