@@ -138,7 +138,7 @@ spec:
     - name: CONTEXT
       value: '$(params.pathToContext)'
     - name: IMAGE
-      value: '$(params.imageUrl):$(params.revision)-$(tasks.misc.results.short-sha)-$(tasks.misc.results.current-ts)'
+      value: '$(params.imageUrl):main-$(tasks.misc.results.short-sha)-$(tasks.misc.results.current-ts)'
     - name: EXTRA_ARGS
       value: [ "--skip-tls-verify" ]
   - name: verify-digest
